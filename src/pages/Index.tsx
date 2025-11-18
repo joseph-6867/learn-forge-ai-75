@@ -1,23 +1,15 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
-import { FileUpload } from "@/components/FileUpload";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
-  const [uploadSection, setUploadSection] = useState(false);
+  const navigate = useNavigate();
   const { toast } = useToast();
 
   const handleGetStarted = () => {
-    setUploadSection(true);
-    // Smooth scroll to upload section
-    setTimeout(() => {
-      document.getElementById("upload-section")?.scrollIntoView({ 
-        behavior: "smooth",
-        block: "start"
-      });
-    }, 100);
+    navigate("/dashboard");
   };
 
   const handleSignIn = () => {
@@ -27,15 +19,6 @@ const Index = () => {
     });
   };
 
-  const handleFileSelect = (file: File) => {
-    toast({
-      title: "File uploaded successfully!",
-      description: `Processing ${file.name}...`,
-    });
-    
-    // TODO: Implement file processing
-    console.log("File selected:", file);
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -44,12 +27,6 @@ const Index = () => {
       <main className="pt-16">
         <Hero onGetStarted={handleGetStarted} />
         <Features />
-        
-        {uploadSection && (
-          <div id="upload-section">
-            <FileUpload onFileSelect={handleFileSelect} />
-          </div>
-        )}
       </main>
 
       <footer className="border-t border-border/50 py-12 px-4 md:px-6 mt-24">
