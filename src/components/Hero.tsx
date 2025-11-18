@@ -26,14 +26,14 @@ export const Hero = ({ onGetStarted }: { onGetStarted: () => void }) => {
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            Transform Any Content Into
+            AI-Powered Study Assistant
             <span className="block mt-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Interactive Learning
+              For Students
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-            Upload PDFs, documents, or presentations and let AI instantly generate summaries, flashcards, quizzes, and more. Study smarter, not harder.
+            Transform any learning material into interactive study aids with AI. Upload documents, get summaries, flashcards, quizzes, and chat with your content.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
@@ -43,7 +43,7 @@ export const Hero = ({ onGetStarted }: { onGetStarted: () => void }) => {
               className="group"
             >
               <Upload className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Get Started Free
+              Open Dashboard
             </Button>
             <Button size="lg" variant="outline">
               Watch Demo
